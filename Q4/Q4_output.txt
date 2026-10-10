@@ -1,0 +1,230 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/05/06 15:29:40 INFO SparkContext: Running Spark version 4.1.0
+26/05/06 15:29:40 INFO SparkContext: OS info Linux, 3.10.0-1160.145.1.el7.x86_64, amd64
+26/05/06 15:29:40 INFO SparkContext: Java version 17.0.4+8
+26/05/06 15:29:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/05/06 15:29:41 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+26/05/06 15:29:41 INFO ResourceUtils: ==============================================================
+26/05/06 15:29:41 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/05/06 15:29:41 INFO ResourceUtils: ==============================================================
+26/05/06 15:29:41 INFO SparkContext: Submitted application: Q4
+26/05/06 15:29:41 INFO SecurityManager: Changing view acls to: acp25ra
+26/05/06 15:29:41 INFO SecurityManager: Changing modify acls to: acp25ra
+26/05/06 15:29:41 INFO SecurityManager: Changing view acls groups to: acp25ra
+26/05/06 15:29:41 INFO SecurityManager: Changing modify acls groups to: acp25ra
+26/05/06 15:29:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp25ra groups with view permissions: EMPTY; users with modify permissions: acp25ra; groups with modify permissions: EMPTY; RPC SSL disabled
+26/05/06 15:29:41 INFO Utils: Successfully started service 'sparkDriver' on port 39818.
+26/05/06 15:29:41 INFO SparkEnv: Registering MapOutputTracker
+26/05/06 15:29:41 INFO SparkEnv: Registering BlockManagerMaster
+26/05/06 15:29:41 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/05/06 15:29:41 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/05/06 15:29:41 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/05/06 15:29:42 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp25ra/blockmgr-06269d7c-3e64-4be8-8599-852fa09a486d
+26/05/06 15:29:42 INFO SparkEnv: Registering OutputCommitCoordinator
+26/05/06 15:29:42 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/05/06 15:29:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/05/06 15:29:42 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/05/06 15:29:42 INFO ResourceProfile: Limiting resource is cpu
+26/05/06 15:29:42 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/05/06 15:29:42 INFO SecurityManager: Changing view acls to: acp25ra
+26/05/06 15:29:42 INFO SecurityManager: Changing modify acls to: acp25ra
+26/05/06 15:29:42 INFO SecurityManager: Changing view acls groups to: acp25ra
+26/05/06 15:29:42 INFO SecurityManager: Changing modify acls groups to: acp25ra
+26/05/06 15:29:42 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp25ra groups with view permissions: EMPTY; users with modify permissions: acp25ra; groups with modify permissions: EMPTY; RPC SSL disabled
+26/05/06 15:29:42 INFO Executor: Starting executor ID driver on host node147.pri.stanage.alces.network
+26/05/06 15:29:42 INFO Executor: OS info Linux, 3.10.0-1160.145.1.el7.x86_64, amd64
+26/05/06 15:29:42 INFO Executor: Java version 17.0.4+8
+26/05/06 15:29:42 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/05/06 15:29:42 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@51a92763 for default.
+26/05/06 15:29:42 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46161.
+26/05/06 15:29:42 INFO NettyBlockTransferService: Server created on node147.pri.stanage.alces.network:46161
+26/05/06 15:29:42 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/05/06 15:29:42 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node147.pri.stanage.alces.network, 46161, None)
+26/05/06 15:29:42 INFO BlockManagerMasterEndpoint: Registering block manager node147.pri.stanage.alces.network:46161 with 14.2 GiB RAM, BlockManagerId(driver, node147.pri.stanage.alces.network, 46161, None)
+26/05/06 15:29:42 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node147.pri.stanage.alces.network, 46161, None)
+26/05/06 15:29:42 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node147.pri.stanage.alces.network, 46161, None)
+Q4 - Movie Recommendations and Cluster Analysis
+Seed: 17976
+
+Time-split Recommendations
+
+Total number of ratings: 20000263
+
+Computing timestamp thresholds
+   40 % percentile timestamp = 1045505355.0
+   60 % percentile timestamp = 1139534565.0
+   80 % percentile timestamp = 1255987521.0
+
+Split sizes:
+  Split 40/60 : train = 7999693   test = 12000570
+  Split 60/40 : train = 12000204   test = 8000059
+  Split 80/20 : train = 15999778   test = 4000485
+
+Split 40/60
+  Training ALS Setting1 ...
+    Setting1 : fit = 18.0 s   RMSE = 0.8021   MSE = 0.6433   MAE = 0.6133
+  Training ALS Setting2 ...
+    Setting2 : fit = 36.1 s   RMSE = 0.8006   MSE = 0.6409   MAE = 0.6138
+
+Split 60/40
+  Training ALS Setting1 ...
+    Setting1 : fit = 19.2 s   RMSE = 0.7753   MSE = 0.6011   MAE = 0.5881
+  Training ALS Setting2 ...
+    Setting2 : fit = 49.6 s   RMSE = 0.7738   MSE = 0.5987   MAE = 0.5871
+
+Split 80/20
+  Training ALS Setting1 ...
+    Setting1 : fit = 24.5 s   RMSE = 0.7951   MSE = 0.6321   MAE = 0.6001
+  Training ALS Setting2 ...
+    Setting2 : fit = 65.1 s   RMSE = 0.7947   MSE = 0.6315   MAE = 0.601
+
+Metrics written to: Q4_A_metrics.csv
+
+Summary table (3 splits x 2 settings x 3 metrics = 18 numbers):
+Split     Setting     RMSE      MSE       MAE
+40/60    Setting1    0.8021    0.6433    0.6133
+40/60    Setting2    0.8006    0.6409    0.6138
+60/40    Setting1    0.7753    0.6011    0.5881
+60/40    Setting2    0.7738    0.5987    0.5871
+80/20    Setting1    0.7951    0.6321    0.6001
+80/20    Setting2    0.7947    0.6315    0.601
+Figure written to: Q4_A_metrics.png
+
+User Analysis
+
+Loading movies from: Data/ml-20m/movies.csv
+Total number of movies: 27278
+
+Split:  40/60 
+  Users with learned factors: 71693
+  Fitting k-means (k=25, seed=17976)...
+  k-means fit time: 5.7 s
+  Top 5 largest clusters:
+    rank 1 : cluster id = 19   size = 4666
+    rank 2 : cluster id = 5   size = 4465
+    rank 3 : cluster id = 17   size = 3841
+    rank 4 : cluster id = 4   size = 3805
+    rank 5 : cluster id = 23   size = 3413
+  Largest cluster id = 19 (size = 4666 )
+  Movies rated by users in largest cluster: 5693
+  Movies with average rating >= 4.0 : 892
+  Top 10 genres among top_movies:
+    1 . Drama count = 561
+    2 . Comedy count = 217
+    3 . Romance count = 163
+    4 . Thriller count = 128
+    5 . Crime count = 108
+    6 . Adventure count = 76
+    7 . War count = 70
+    8 . Action count = 70
+    9 . Documentary count = 69
+    10 . Mystery count = 60
+
+Split:  60/40 
+  Users with learned factors: 90547
+  Fitting k-means (k=25, seed=17976)...
+  k-means fit time: 4.7 s
+  Top 5 largest clusters:
+    rank 1 : cluster id = 18   size = 6800
+    rank 2 : cluster id = 9   size = 5950
+    rank 3 : cluster id = 20   size = 4699
+    rank 4 : cluster id = 19   size = 4518
+    rank 5 : cluster id = 23   size = 4232
+  Largest cluster id = 18 (size = 6800 )
+  Movies rated by users in largest cluster: 8340
+  Movies with average rating >= 4.0 : 1271
+  Top 10 genres among top_movies:
+    1 . Drama count = 809
+    2 . Comedy count = 308
+    3 . Romance count = 222
+    4 . Thriller count = 167
+    5 . Crime count = 154
+    6 . Documentary count = 138
+    7 . War count = 112
+    8 . Adventure count = 110
+    9 . Action count = 103
+    10 . Mystery count = 76
+
+Split:  80/20 
+  Users with learned factors: 112465
+  Fitting k-means (k=25, seed=17976)...
+  k-means fit time: 4.7 s
+  Top 5 largest clusters:
+    rank 1 : cluster id = 19   size = 7895
+    rank 2 : cluster id = 18   size = 7013
+    rank 3 : cluster id = 9   size = 5984
+    rank 4 : cluster id = 12   size = 5832
+    rank 5 : cluster id = 24   size = 5697
+  Largest cluster id = 19 (size = 7895 )
+  Movies rated by users in largest cluster: 10990
+  Movies with average rating >= 4.0 : 2079
+  Top 10 genres among top_movies:
+    1 . Drama count = 1356
+    2 . Comedy count = 536
+    3 . Romance count = 399
+    4 . Thriller count = 244
+    5 . Documentary count = 227
+    6 . Crime count = 220
+    7 . War count = 166
+    8 . Adventure count = 159
+    9 . Action count = 153
+    10 . Fantasy count = 119
+
+Cluster-size table written to: Q4_B_cluster_sizes.csv
+Genre table written to: Q4_B_top_genres.csv
+
+Summary table (3 splits x 5 clusters = 15 numbers):
+Split    Rank   Cluster ID   Size
+40/60    1    19    4666
+40/60    2    5    4465
+40/60    3    17    3841
+40/60    4    4    3805
+40/60    5    23    3413
+60/40    1    18    6800
+60/40    2    9    5950
+60/40    3    20    4699
+60/40    4    19    4518
+60/40    5    23    4232
+80/20    1    19    7895
+80/20    2    18    7013
+80/20    3    9    5984
+80/20    4    12    5832
+80/20    5    24    5697
+
+Summary table (3 splits x 10 genres = 30 genres):
+Split    Rank   Genre              Count
+40/60    1    Drama    561
+40/60    2    Comedy    217
+40/60    3    Romance    163
+40/60    4    Thriller    128
+40/60    5    Crime    108
+40/60    6    Adventure    76
+40/60    7    War    70
+40/60    8    Action    70
+40/60    9    Documentary    69
+40/60    10    Mystery    60
+60/40    1    Drama    809
+60/40    2    Comedy    308
+60/40    3    Romance    222
+60/40    4    Thriller    167
+60/40    5    Crime    154
+60/40    6    Documentary    138
+60/40    7    War    112
+60/40    8    Adventure    110
+60/40    9    Action    103
+60/40    10    Mystery    76
+80/20    1    Drama    1356
+80/20    2    Comedy    536
+80/20    3    Romance    399
+80/20    4    Thriller    244
+80/20    5    Documentary    227
+80/20    6    Crime    220
+80/20    7    War    166
+80/20    8    Adventure    159
+80/20    9    Action    153
+80/20    10    Fantasy    119
+
+Figure written to: Q4_B_cluster_sizes.png
+
+Q4 finished.

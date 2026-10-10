@@ -1,0 +1,392 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/05/06 12:11:05 INFO SparkContext: Running Spark version 4.1.0
+26/05/06 12:11:05 INFO SparkContext: OS info Linux, 3.10.0-1160.145.1.el7.x86_64, amd64
+26/05/06 12:11:05 INFO SparkContext: Java version 17.0.4+8
+26/05/06 12:11:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/05/06 12:11:06 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in standalone/kubernetes and LOCAL_DIRS in YARN).
+26/05/06 12:11:06 INFO ResourceUtils: ==============================================================
+26/05/06 12:11:06 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/05/06 12:11:06 INFO ResourceUtils: ==============================================================
+26/05/06 12:11:06 INFO SparkContext: Submitted application: Q2_code.py
+26/05/06 12:11:06 INFO SecurityManager: Changing view acls to: acp25ra
+26/05/06 12:11:06 INFO SecurityManager: Changing modify acls to: acp25ra
+26/05/06 12:11:06 INFO SecurityManager: Changing view acls groups to: acp25ra
+26/05/06 12:11:06 INFO SecurityManager: Changing modify acls groups to: acp25ra
+26/05/06 12:11:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp25ra groups with view permissions: EMPTY; users with modify permissions: acp25ra; groups with modify permissions: EMPTY; RPC SSL disabled
+26/05/06 12:11:06 INFO Utils: Successfully started service 'sparkDriver' on port 40265.
+26/05/06 12:11:07 INFO SparkEnv: Registering MapOutputTracker
+26/05/06 12:11:07 INFO SparkEnv: Registering BlockManagerMaster
+26/05/06 12:11:07 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/05/06 12:11:07 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/05/06 12:11:07 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/05/06 12:11:07 INFO DiskBlockManager: Created local directory at /mnt/parscratch/users/acp25ra/blockmgr-f8de98f4-99c3-45d8-a0f7-c608b8af8c9c
+26/05/06 12:11:07 INFO SparkEnv: Registering OutputCommitCoordinator
+26/05/06 12:11:07 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/05/06 12:11:07 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/05/06 12:11:07 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/05/06 12:11:07 INFO ResourceProfile: Limiting resource is cpu
+26/05/06 12:11:07 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/05/06 12:11:07 INFO SecurityManager: Changing view acls to: acp25ra
+26/05/06 12:11:07 INFO SecurityManager: Changing modify acls to: acp25ra
+26/05/06 12:11:07 INFO SecurityManager: Changing view acls groups to: acp25ra
+26/05/06 12:11:07 INFO SecurityManager: Changing modify acls groups to: acp25ra
+26/05/06 12:11:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: acp25ra groups with view permissions: EMPTY; users with modify permissions: acp25ra; groups with modify permissions: EMPTY; RPC SSL disabled
+26/05/06 12:11:08 INFO Executor: Starting executor ID driver on host node106.pri.stanage.alces.network
+26/05/06 12:11:08 INFO Executor: OS info Linux, 3.10.0-1160.145.1.el7.x86_64, amd64
+26/05/06 12:11:08 INFO Executor: Java version 17.0.4+8
+26/05/06 12:11:08 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/05/06 12:11:08 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@4086a8ac for default.
+26/05/06 12:11:08 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39871.
+26/05/06 12:11:08 INFO NettyBlockTransferService: Server created on node106.pri.stanage.alces.network:39871
+26/05/06 12:11:08 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/05/06 12:11:08 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, node106.pri.stanage.alces.network, 39871, None)
+26/05/06 12:11:08 INFO BlockManagerMasterEndpoint: Registering block manager node106.pri.stanage.alces.network:39871 with 53.8 GiB RAM, BlockManagerId(driver, node106.pri.stanage.alces.network, 39871, None)
+26/05/06 12:11:08 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, node106.pri.stanage.alces.network, 39871, None)
+26/05/06 12:11:08 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, node106.pri.stanage.alces.network, 39871, None)
+
+Sample of processed columns (3 rows):
++----------+-----+-------+-------------------+------------------+----------------------------------------+
+|count_date|month|weekday|direction_of_travel|all_motor_vehicles|lat_lon_scaled                          |
++----------+-----+-------+-------------------+------------------+----------------------------------------+
+|2004-05-21|5    |4      |S                  |49.0              |[-1.8412190666732673,-3.390684973506801]|
+|2004-05-21|5    |4      |S                  |46.0              |[-1.8412190666732673,-3.390684973506801]|
+|2004-05-21|5    |4      |S                  |51.0              |[-1.8412190666732673,-3.390684973506801]|
++----------+-----+-------+-------------------+------------------+----------------------------------------+
+only showing top 3 rows
+
+Data split by year
+Training   (2000-2021): 4,655,073 rows
+Validation (2022-2023): 306,804 rows
+Testing    (2024):      151,848 rows
+Total:                  5,113,725 rows
+
+Final feature vector created
+Feature columns combined: ['direction_of_travel_ohe', 'hour_ohe', 'region_ons_code_ohe', 'local_authority_code_ohe', 'month_ohe', 'weekday_ohe', 'lat_lon_scaled']
++--------------------------------------------------------------------------------+------------------+
+|                                                                        features|all_motor_vehicles|
++--------------------------------------------------------------------------------+------------------+
+|(266,[1,8,26,247,249,257,264,265],[1.0,1.0,1.0,1.0,1.0,1.0,-1.841219066673267...|              49.0|
+|(266,[1,10,26,247,249,257,264,265],[1.0,1.0,1.0,1.0,1.0,1.0,-1.84121906667326...|              46.0|
+|(266,[1,13,26,247,249,257,264,265],[1.0,1.0,1.0,1.0,1.0,1.0,-1.84121906667326...|              51.0|
++--------------------------------------------------------------------------------+------------------+
+only showing top 3 rows
+
+Hyperparameter tuning started
+regParam=0.001, seed=17976, val_MSE=813883.4060
+regParam=0.001, seed=17977, val_MSE=814032.7587
+regParam=0.001, seed=17978, val_MSE=814043.9527
+regParam=0.001, seed=17979, val_MSE=813876.7193
+regParam=0.001, seed=17980, val_MSE=814290.8457
+regParam=0.01, seed=17976, val_MSE=838532.4285
+regParam=0.01, seed=17977, val_MSE=840046.3394
+regParam=0.01, seed=17978, val_MSE=836992.2045
+regParam=0.01, seed=17979, val_MSE=836917.3178
+regParam=0.01, seed=17980, val_MSE=836599.2510
+regParam=0.1, seed=17976, val_MSE=868886.4190
+regParam=0.1, seed=17977, val_MSE=874206.3648
+regParam=0.1, seed=17978, val_MSE=869390.2821
+regParam=0.1, seed=17979, val_MSE=870322.0689
+regParam=0.1, seed=17980, val_MSE=873246.5911
+regParam=1.0, seed=17976, val_MSE=885257.4638
+regParam=1.0, seed=17977, val_MSE=886093.7237
+regParam=1.0, seed=17978, val_MSE=886072.7875
+regParam=1.0, seed=17979, val_MSE=885716.0237
+regParam=1.0, seed=17980, val_MSE=887122.8189
+regParam=10.0, seed=17976, val_MSE=888451.0291
+regParam=10.0, seed=17977, val_MSE=888503.2299
+regParam=10.0, seed=17978, val_MSE=888423.5699
+regParam=10.0, seed=17979, val_MSE=888491.7536
+regParam=10.0, seed=17980, val_MSE=888475.2436
+regParam=100.0, seed=17976, val_MSE=888745.1891
+regParam=100.0, seed=17977, val_MSE=888779.6966
+regParam=100.0, seed=17978, val_MSE=888720.0182
+regParam=100.0, seed=17979, val_MSE=888766.7515
+regParam=100.0, seed=17980, val_MSE=888734.7676
+regParam=1000.0, seed=17976, val_MSE=888780.2129
+regParam=1000.0, seed=17977, val_MSE=888797.2424
+regParam=1000.0, seed=17978, val_MSE=888741.9969
+regParam=1000.0, seed=17979, val_MSE=888794.2106
+regParam=1000.0, seed=17980, val_MSE=888743.6133
+regParam=0.001: mean_MSE=814025.5365, std_MSE=150.4180
+regParam=0.01: mean_MSE=837817.5082, std_MSE=1300.3399
+regParam=0.1: mean_MSE=871210.3452, std_MSE=2127.1920
+regParam=1.0: mean_MSE=886052.5635, std_MSE=615.3036
+regParam=10.0: mean_MSE=888468.9652, std_MSE=28.6888
+regParam=100.0: mean_MSE=888749.2846, std_MSE=21.5129
+regParam=1000.0: mean_MSE=888771.4552, std_MSE=24.0934
+
+Tuning complete. Results saved to Q2_B_validation_results.csv
+
+Validation curve saved to Q2_B_validation_curve.png
+Optimal regParam: 0.001
+Combined train+val size: 4,961,877 rows
+
+Final Poisson Model
+Optimal regParam: 0.001
+Test MSE: 787575.1086
+Intercept: 6.270922303416401
+Number of coefficients: 266
+
+Final results saved to Q2_B_final_results.txt
+
+Section B complete
+
+Section C: Logistic Regression
+Median of all_motor_vehicles (training set only): 240.0
+
+Class distribution in training set:
++-------+-------+
+|traffic|  count|
++-------+-------+
+|    0.0|2327936|
+|    1.0|2327137|
++-------+-------+
+
+Class distribution in validation set:
++-------+------+
+|traffic| count|
++-------+------+
+|    0.0|160144|
+|    1.0|146660|
++-------+------+
+
+Class distribution in test set:
++-------+-----+
+|traffic|count|
++-------+-----+
+|    0.0|80216|
+|    1.0|71632|
++-------+-----+
+
+
+Logistic regression hyperparameter tuning started
+regParam=0.001, elasticNet=0.0, seed=17976, val_acc=0.6317
+regParam=0.001, elasticNet=0.0, seed=17977, val_acc=0.6317
+regParam=0.001, elasticNet=0.0, seed=17978, val_acc=0.6314
+regParam=0.001, elasticNet=0.0, seed=17979, val_acc=0.6315
+regParam=0.001, elasticNet=0.0, seed=17980, val_acc=0.6315
+regParam=0.001, elasticNet=0.2, seed=17976, val_acc=0.6309
+regParam=0.001, elasticNet=0.2, seed=17977, val_acc=0.6306
+regParam=0.001, elasticNet=0.2, seed=17978, val_acc=0.6302
+regParam=0.001, elasticNet=0.2, seed=17979, val_acc=0.6310
+regParam=0.001, elasticNet=0.2, seed=17980, val_acc=0.6309
+regParam=0.001, elasticNet=0.5, seed=17976, val_acc=0.6294
+regParam=0.001, elasticNet=0.5, seed=17977, val_acc=0.6294
+regParam=0.001, elasticNet=0.5, seed=17978, val_acc=0.6292
+regParam=0.001, elasticNet=0.5, seed=17979, val_acc=0.6294
+regParam=0.001, elasticNet=0.5, seed=17980, val_acc=0.6294
+regParam=0.001, elasticNet=0.8, seed=17976, val_acc=0.6289
+regParam=0.001, elasticNet=0.8, seed=17977, val_acc=0.6286
+regParam=0.001, elasticNet=0.8, seed=17978, val_acc=0.6283
+regParam=0.001, elasticNet=0.8, seed=17979, val_acc=0.6286
+regParam=0.001, elasticNet=0.8, seed=17980, val_acc=0.6290
+regParam=0.001, elasticNet=1.0, seed=17976, val_acc=0.6280
+regParam=0.001, elasticNet=1.0, seed=17977, val_acc=0.6279
+regParam=0.001, elasticNet=1.0, seed=17978, val_acc=0.6283
+regParam=0.001, elasticNet=1.0, seed=17979, val_acc=0.6285
+regParam=0.001, elasticNet=1.0, seed=17980, val_acc=0.6289
+regParam=0.01, elasticNet=0.0, seed=17976, val_acc=0.6307
+regParam=0.01, elasticNet=0.0, seed=17977, val_acc=0.6306
+regParam=0.01, elasticNet=0.0, seed=17978, val_acc=0.6304
+regParam=0.01, elasticNet=0.0, seed=17979, val_acc=0.6306
+regParam=0.01, elasticNet=0.0, seed=17980, val_acc=0.6307
+regParam=0.01, elasticNet=0.2, seed=17976, val_acc=0.6277
+regParam=0.01, elasticNet=0.2, seed=17977, val_acc=0.6280
+regParam=0.01, elasticNet=0.2, seed=17978, val_acc=0.6274
+regParam=0.01, elasticNet=0.2, seed=17979, val_acc=0.6275
+regParam=0.01, elasticNet=0.2, seed=17980, val_acc=0.6279
+regParam=0.01, elasticNet=0.5, seed=17976, val_acc=0.6228
+regParam=0.01, elasticNet=0.5, seed=17977, val_acc=0.6230
+regParam=0.01, elasticNet=0.5, seed=17978, val_acc=0.6218
+regParam=0.01, elasticNet=0.5, seed=17979, val_acc=0.6229
+regParam=0.01, elasticNet=0.5, seed=17980, val_acc=0.6234
+regParam=0.01, elasticNet=0.8, seed=17976, val_acc=0.6083
+regParam=0.01, elasticNet=0.8, seed=17977, val_acc=0.6070
+regParam=0.01, elasticNet=0.8, seed=17978, val_acc=0.6072
+regParam=0.01, elasticNet=0.8, seed=17979, val_acc=0.6079
+regParam=0.01, elasticNet=0.8, seed=17980, val_acc=0.6077
+regParam=0.01, elasticNet=1.0, seed=17976, val_acc=0.6034
+regParam=0.01, elasticNet=1.0, seed=17977, val_acc=0.6041
+regParam=0.01, elasticNet=1.0, seed=17978, val_acc=0.6032
+regParam=0.01, elasticNet=1.0, seed=17979, val_acc=0.6038
+regParam=0.01, elasticNet=1.0, seed=17980, val_acc=0.6034
+regParam=0.1, elasticNet=0.0, seed=17976, val_acc=0.6299
+regParam=0.1, elasticNet=0.0, seed=17977, val_acc=0.6299
+regParam=0.1, elasticNet=0.0, seed=17978, val_acc=0.6296
+regParam=0.1, elasticNet=0.0, seed=17979, val_acc=0.6298
+regParam=0.1, elasticNet=0.0, seed=17980, val_acc=0.6295
+regParam=0.1, elasticNet=0.2, seed=17976, val_acc=0.5492
+regParam=0.1, elasticNet=0.2, seed=17977, val_acc=0.5487
+regParam=0.1, elasticNet=0.2, seed=17978, val_acc=0.5489
+regParam=0.1, elasticNet=0.2, seed=17979, val_acc=0.5486
+regParam=0.1, elasticNet=0.2, seed=17980, val_acc=0.5489
+regParam=0.1, elasticNet=0.5, seed=17976, val_acc=0.5498
+regParam=0.1, elasticNet=0.5, seed=17977, val_acc=0.5498
+regParam=0.1, elasticNet=0.5, seed=17978, val_acc=0.5498
+regParam=0.1, elasticNet=0.5, seed=17979, val_acc=0.5498
+regParam=0.1, elasticNet=0.5, seed=17980, val_acc=0.5498
+regParam=0.1, elasticNet=0.8, seed=17976, val_acc=0.5220
+regParam=0.1, elasticNet=0.8, seed=17977, val_acc=0.4780
+regParam=0.1, elasticNet=0.8, seed=17978, val_acc=0.4780
+regParam=0.1, elasticNet=0.8, seed=17979, val_acc=0.5220
+regParam=0.1, elasticNet=0.8, seed=17980, val_acc=0.5220
+regParam=0.1, elasticNet=1.0, seed=17976, val_acc=0.5220
+regParam=0.1, elasticNet=1.0, seed=17977, val_acc=0.4780
+regParam=0.1, elasticNet=1.0, seed=17978, val_acc=0.4780
+regParam=0.1, elasticNet=1.0, seed=17979, val_acc=0.5220
+regParam=0.1, elasticNet=1.0, seed=17980, val_acc=0.5220
+regParam=1.0, elasticNet=0.0, seed=17976, val_acc=0.6266
+regParam=1.0, elasticNet=0.0, seed=17977, val_acc=0.6270
+regParam=1.0, elasticNet=0.0, seed=17978, val_acc=0.6268
+regParam=1.0, elasticNet=0.0, seed=17979, val_acc=0.6266
+regParam=1.0, elasticNet=0.0, seed=17980, val_acc=0.6269
+regParam=1.0, elasticNet=0.2, seed=17976, val_acc=0.5220
+regParam=1.0, elasticNet=0.2, seed=17977, val_acc=0.4780
+regParam=1.0, elasticNet=0.2, seed=17978, val_acc=0.4780
+regParam=1.0, elasticNet=0.2, seed=17979, val_acc=0.5220
+regParam=1.0, elasticNet=0.2, seed=17980, val_acc=0.5220
+regParam=1.0, elasticNet=0.5, seed=17976, val_acc=0.5220
+regParam=1.0, elasticNet=0.5, seed=17977, val_acc=0.4780
+regParam=1.0, elasticNet=0.5, seed=17978, val_acc=0.4780
+regParam=1.0, elasticNet=0.5, seed=17979, val_acc=0.5220
+regParam=1.0, elasticNet=0.5, seed=17980, val_acc=0.5220
+regParam=1.0, elasticNet=0.8, seed=17976, val_acc=0.5220
+regParam=1.0, elasticNet=0.8, seed=17977, val_acc=0.4780
+regParam=1.0, elasticNet=0.8, seed=17978, val_acc=0.4780
+regParam=1.0, elasticNet=0.8, seed=17979, val_acc=0.5220
+regParam=1.0, elasticNet=0.8, seed=17980, val_acc=0.5220
+regParam=1.0, elasticNet=1.0, seed=17976, val_acc=0.5220
+regParam=1.0, elasticNet=1.0, seed=17977, val_acc=0.4780
+regParam=1.0, elasticNet=1.0, seed=17978, val_acc=0.4780
+regParam=1.0, elasticNet=1.0, seed=17979, val_acc=0.5220
+regParam=1.0, elasticNet=1.0, seed=17980, val_acc=0.5220
+regParam=10.0, elasticNet=0.0, seed=17976, val_acc=0.6235
+regParam=10.0, elasticNet=0.0, seed=17977, val_acc=0.6232
+regParam=10.0, elasticNet=0.0, seed=17978, val_acc=0.6231
+regParam=10.0, elasticNet=0.0, seed=17979, val_acc=0.6230
+regParam=10.0, elasticNet=0.0, seed=17980, val_acc=0.6236
+regParam=10.0, elasticNet=0.2, seed=17976, val_acc=0.5220
+regParam=10.0, elasticNet=0.2, seed=17977, val_acc=0.4780
+regParam=10.0, elasticNet=0.2, seed=17978, val_acc=0.4780
+regParam=10.0, elasticNet=0.2, seed=17979, val_acc=0.5220
+regParam=10.0, elasticNet=0.2, seed=17980, val_acc=0.5220
+regParam=10.0, elasticNet=0.5, seed=17976, val_acc=0.5220
+regParam=10.0, elasticNet=0.5, seed=17977, val_acc=0.4780
+regParam=10.0, elasticNet=0.5, seed=17978, val_acc=0.4780
+regParam=10.0, elasticNet=0.5, seed=17979, val_acc=0.5220
+regParam=10.0, elasticNet=0.5, seed=17980, val_acc=0.5220
+regParam=10.0, elasticNet=0.8, seed=17976, val_acc=0.5220
+regParam=10.0, elasticNet=0.8, seed=17977, val_acc=0.4780
+regParam=10.0, elasticNet=0.8, seed=17978, val_acc=0.4780
+regParam=10.0, elasticNet=0.8, seed=17979, val_acc=0.5220
+regParam=10.0, elasticNet=0.8, seed=17980, val_acc=0.5220
+regParam=10.0, elasticNet=1.0, seed=17976, val_acc=0.5220
+regParam=10.0, elasticNet=1.0, seed=17977, val_acc=0.4780
+regParam=10.0, elasticNet=1.0, seed=17978, val_acc=0.4780
+regParam=10.0, elasticNet=1.0, seed=17979, val_acc=0.5220
+regParam=10.0, elasticNet=1.0, seed=17980, val_acc=0.5220
+regParam=100.0, elasticNet=0.0, seed=17976, val_acc=0.6172
+regParam=100.0, elasticNet=0.0, seed=17977, val_acc=0.6193
+regParam=100.0, elasticNet=0.0, seed=17978, val_acc=0.6222
+regParam=100.0, elasticNet=0.0, seed=17979, val_acc=0.6227
+regParam=100.0, elasticNet=0.0, seed=17980, val_acc=0.6164
+regParam=100.0, elasticNet=0.2, seed=17976, val_acc=0.5220
+regParam=100.0, elasticNet=0.2, seed=17977, val_acc=0.4780
+regParam=100.0, elasticNet=0.2, seed=17978, val_acc=0.4780
+regParam=100.0, elasticNet=0.2, seed=17979, val_acc=0.5220
+regParam=100.0, elasticNet=0.2, seed=17980, val_acc=0.5220
+regParam=100.0, elasticNet=0.5, seed=17976, val_acc=0.5220
+regParam=100.0, elasticNet=0.5, seed=17977, val_acc=0.4780
+regParam=100.0, elasticNet=0.5, seed=17978, val_acc=0.4780
+regParam=100.0, elasticNet=0.5, seed=17979, val_acc=0.5220
+regParam=100.0, elasticNet=0.5, seed=17980, val_acc=0.5220
+regParam=100.0, elasticNet=0.8, seed=17976, val_acc=0.5220
+regParam=100.0, elasticNet=0.8, seed=17977, val_acc=0.4780
+regParam=100.0, elasticNet=0.8, seed=17978, val_acc=0.4780
+regParam=100.0, elasticNet=0.8, seed=17979, val_acc=0.5220
+regParam=100.0, elasticNet=0.8, seed=17980, val_acc=0.5220
+regParam=100.0, elasticNet=1.0, seed=17976, val_acc=0.5220
+regParam=100.0, elasticNet=1.0, seed=17977, val_acc=0.4780
+regParam=100.0, elasticNet=1.0, seed=17978, val_acc=0.4780
+regParam=100.0, elasticNet=1.0, seed=17979, val_acc=0.5220
+regParam=100.0, elasticNet=1.0, seed=17980, val_acc=0.5220
+regParam=1000.0, elasticNet=0.0, seed=17976, val_acc=0.5391
+regParam=1000.0, elasticNet=0.0, seed=17977, val_acc=0.5361
+regParam=1000.0, elasticNet=0.0, seed=17978, val_acc=0.6111
+regParam=1000.0, elasticNet=0.0, seed=17979, val_acc=0.6135
+regParam=1000.0, elasticNet=0.0, seed=17980, val_acc=0.5364
+regParam=1000.0, elasticNet=0.2, seed=17976, val_acc=0.5220
+regParam=1000.0, elasticNet=0.2, seed=17977, val_acc=0.4780
+regParam=1000.0, elasticNet=0.2, seed=17978, val_acc=0.4780
+regParam=1000.0, elasticNet=0.2, seed=17979, val_acc=0.5220
+regParam=1000.0, elasticNet=0.2, seed=17980, val_acc=0.5220
+regParam=1000.0, elasticNet=0.5, seed=17976, val_acc=0.5220
+regParam=1000.0, elasticNet=0.5, seed=17977, val_acc=0.4780
+regParam=1000.0, elasticNet=0.5, seed=17978, val_acc=0.4780
+regParam=1000.0, elasticNet=0.5, seed=17979, val_acc=0.5220
+regParam=1000.0, elasticNet=0.5, seed=17980, val_acc=0.5220
+regParam=1000.0, elasticNet=0.8, seed=17976, val_acc=0.5220
+regParam=1000.0, elasticNet=0.8, seed=17977, val_acc=0.4780
+regParam=1000.0, elasticNet=0.8, seed=17978, val_acc=0.4780
+regParam=1000.0, elasticNet=0.8, seed=17979, val_acc=0.5220
+regParam=1000.0, elasticNet=0.8, seed=17980, val_acc=0.5220
+regParam=1000.0, elasticNet=1.0, seed=17976, val_acc=0.5220
+regParam=1000.0, elasticNet=1.0, seed=17977, val_acc=0.4780
+regParam=1000.0, elasticNet=1.0, seed=17978, val_acc=0.4780
+regParam=1000.0, elasticNet=1.0, seed=17979, val_acc=0.5220
+regParam=1000.0, elasticNet=1.0, seed=17980, val_acc=0.5220
+regParam=0.001, elasticNet=0.0: mean_acc=0.6316, std_acc=0.0001
+regParam=0.001, elasticNet=0.2: mean_acc=0.6307, std_acc=0.0003
+regParam=0.001, elasticNet=0.5: mean_acc=0.6294, std_acc=0.0001
+regParam=0.001, elasticNet=0.8: mean_acc=0.6287, std_acc=0.0002
+regParam=0.001, elasticNet=1.0: mean_acc=0.6283, std_acc=0.0004
+regParam=0.01, elasticNet=0.0: mean_acc=0.6306, std_acc=0.0001
+regParam=0.01, elasticNet=0.2: mean_acc=0.6277, std_acc=0.0002
+regParam=0.01, elasticNet=0.5: mean_acc=0.6228, std_acc=0.0005
+regParam=0.01, elasticNet=0.8: mean_acc=0.6076, std_acc=0.0005
+regParam=0.01, elasticNet=1.0: mean_acc=0.6036, std_acc=0.0003
+regParam=0.1, elasticNet=0.0: mean_acc=0.6298, std_acc=0.0002
+regParam=0.1, elasticNet=0.2: mean_acc=0.5489, std_acc=0.0002
+regParam=0.1, elasticNet=0.5: mean_acc=0.5498, std_acc=0.0000
+regParam=0.1, elasticNet=0.8: mean_acc=0.5044, std_acc=0.0215
+regParam=0.1, elasticNet=1.0: mean_acc=0.5044, std_acc=0.0215
+regParam=1.0, elasticNet=0.0: mean_acc=0.6268, std_acc=0.0002
+regParam=1.0, elasticNet=0.2: mean_acc=0.5044, std_acc=0.0215
+regParam=1.0, elasticNet=0.5: mean_acc=0.5044, std_acc=0.0215
+regParam=1.0, elasticNet=0.8: mean_acc=0.5044, std_acc=0.0215
+regParam=1.0, elasticNet=1.0: mean_acc=0.5044, std_acc=0.0215
+regParam=10.0, elasticNet=0.0: mean_acc=0.6233, std_acc=0.0002
+regParam=10.0, elasticNet=0.2: mean_acc=0.5044, std_acc=0.0215
+regParam=10.0, elasticNet=0.5: mean_acc=0.5044, std_acc=0.0215
+regParam=10.0, elasticNet=0.8: mean_acc=0.5044, std_acc=0.0215
+regParam=10.0, elasticNet=1.0: mean_acc=0.5044, std_acc=0.0215
+regParam=100.0, elasticNet=0.0: mean_acc=0.6196, std_acc=0.0025
+regParam=100.0, elasticNet=0.2: mean_acc=0.5044, std_acc=0.0215
+regParam=100.0, elasticNet=0.5: mean_acc=0.5044, std_acc=0.0215
+regParam=100.0, elasticNet=0.8: mean_acc=0.5044, std_acc=0.0215
+regParam=100.0, elasticNet=1.0: mean_acc=0.5044, std_acc=0.0215
+regParam=1000.0, elasticNet=0.0: mean_acc=0.5672, std_acc=0.0368
+regParam=1000.0, elasticNet=0.2: mean_acc=0.5044, std_acc=0.0215
+regParam=1000.0, elasticNet=0.5: mean_acc=0.5044, std_acc=0.0215
+regParam=1000.0, elasticNet=0.8: mean_acc=0.5044, std_acc=0.0215
+regParam=1000.0, elasticNet=1.0: mean_acc=0.5044, std_acc=0.0215
+
+Tuning complete. Results saved to Q2_C_validation_results.csv
+
+Validation curve saved to Q2_C_validation_curve.png
+Optimal regParam: 0.001
+Optimal elasticNetParam: 0.0
+Best mean validation accuracy: 0.6316
+Combined train+val size for LR: 4,961,877 rows
+
+Final Logistic Regression Model
+Optimal regParam: 0.001
+Optimal elasticNetParam: 0.0
+Test Accuracy: 0.6412
+Intercept: -0.003436812053028364
+Number of coefficients: 266
+
+Final results saved to Q2_C_final_results.txt and Q2_C_coefficients.csv
+
+Section C complete
